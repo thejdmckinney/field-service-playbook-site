@@ -47,12 +47,13 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const { frontmatter, mdxSource, portableTextContent, isSanity } = await getPostBySlug(slug);
 
-  // JSON-LD structured data for SEO
-  const jsonLd = {
+  // BlogPosting JSON-LD structured data
+  const blogPostJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'BlogPosting',
     headline: frontmatter.title,
     description: frontmatter.description,
+    image: frontmatter.featuredImage ? `https://fieldserviceplaybook.com${frontmatter.featuredImage}` : 'https://fieldserviceplaybook.com/field-service-blog-banner.jpg',
     author: {
       '@type': 'Person',
       name: frontmatter.author,
@@ -62,7 +63,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
       name: 'Field Service Playbook',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://fieldserviceplaybook.com/logo.png'
+        url: 'https://fieldserviceplaybook.com/field-service-playbook-logo.jpg'
       }
     },
     datePublished: frontmatter.date,
@@ -72,11 +73,49 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
       '@id': `https://fieldserviceplaybook.com/blog/${slug}`
     },
     articleSection: frontmatter.category,
-    keywords: frontmatter.category
+    keywords: `${frontmatter.category}, field service, contractor business, ${frontmatter.title}`,
+    inLanguage: 'en-US',
+    isAccessibleForFree: true
+  };
+
+  // Breadcrumb JSON-LD
+  const breadcrumbJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    'itemListElement': [
+      {
+        '@type': 'ListItem',
+        'position': 1,
+        'name': 'Home',
+        'item': 'https://fieldserviceplaybook.com'
+      },
+      {
+        '@type': 'ListItem',
+        'position': 2,
+        'name': 'Blog',
+        'item': 'https://fieldserviceplaybook.com/blog'
+      },
+      {
+        '@type': 'ListItem',
+        'position': 3,
+        'name': frontmatter.title,
+        'item': `https://fieldserviceplaybook.com/blog/${slug}`
+      }
+    ]
   };
 
   return (
     <div className="min-h-screen bg-gray-50">
+      {/* JSON-LD structured data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(blogPostJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+      
       <Header />
       
       {/* Banner Image */}
@@ -90,12 +129,6 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
           priority
         />
       </div>
-      
-      {/* JSON-LD Schema */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
       
       {/* Article Header */}
       <article className="max-w-4xl mx-auto px-4 py-12">

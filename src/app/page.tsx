@@ -1,10 +1,91 @@
 import Link from "next/link";
 import Image from "next/image";
 import NewsletterForm from "@/components/NewsletterForm";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Field Service Playbook | Grow Your Contractor Business",
+  description: "Expert resources for handyman, plumbing, HVAC, electrical, landscaping contractors. Proven marketing strategies, efficiency hacks, software reviews, and growth tips to increase revenue.",
+  keywords: [
+    "field service business",
+    "contractor marketing",
+    "handyman business tips",
+    "plumbing business growth",
+    "HVAC contractor software",
+    "electrical contractor marketing",
+    "landscaping business tips",
+    "field service management",
+    "contractor efficiency",
+    "service business revenue"
+  ],
+  openGraph: {
+    title: "Field Service Playbook | Grow Your Contractor Business",
+    description: "Expert resources for field service contractors. Marketing strategies, efficiency hacks, software reviews, and growth tips.",
+    url: "https://fieldserviceplaybook.com",
+    siteName: "Field Service Playbook",
+    type: "website",
+    images: [
+      {
+        url: "/field-service-playbook-logo.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Field Service Playbook - Contractor Business Resources"
+      }
+    ]
+  },
+  alternates: {
+    canonical: "https://fieldserviceplaybook.com",
+  }
+};
 
 export default function Home() {
+  // JSON-LD structured data
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Field Service Playbook",
+    "url": "https://fieldserviceplaybook.com",
+    "description": "Expert resources, tools, and advice for field service contractors to grow their business",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Field Service Playbook",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://fieldserviceplaybook.com/field-service-playbook-logo.jpg"
+      }
+    },
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://fieldserviceplaybook.com/blog?search={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  };
+
+  const organizationJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Field Service Playbook",
+    "url": "https://fieldserviceplaybook.com",
+    "logo": "https://fieldserviceplaybook.com/field-service-playbook-logo.jpg",
+    "sameAs": [
+      "https://creativejobhub.com"
+    ],
+    "description": "Helping field service contractors grow their business with expert advice, tools, and resources"
+  };
+
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
+    <>
+      {/* JSON-LD structured data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+      />
+      
+      <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
       {/* Header/Navigation */}
       <header className="px-4 py-6 mx-auto max-w-7xl sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
@@ -137,7 +218,8 @@ export default function Home() {
           </Link>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   );
 }
 

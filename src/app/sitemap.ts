@@ -13,6 +13,15 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.8,
   }));
 
+  // Category pages
+  const categories = ['revenue', 'marketing', 'efficiency', 'customer-service', 'software', 'growth'];
+  const categoryPages = categories.map((category) => ({
+    url: `${baseUrl}/blog/category/${category}`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly' as const,
+    priority: 0.7,
+  }));
+
   // Static pages
   const staticPages = [
     {
@@ -53,5 +62,5 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     },
   ];
 
-  return [...staticPages, ...blogPosts];
+  return [...staticPages, ...categoryPages, ...blogPosts];
 }

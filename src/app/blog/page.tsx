@@ -21,8 +21,47 @@ export const metadata: Metadata = {
 export default async function BlogPage() {
   const posts = await getAllPosts();
 
+  // ItemList JSON-LD for blog listing
+  const itemListJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    'itemListElement': posts.slice(0, 10).map((post, index) => ({
+      '@type': 'ListItem',
+      'position': index + 1,
+      'url': `https://fieldserviceplaybook.com/blog/${post.slug}`,
+      'name': post.title
+    }))
+  };
+
+  // Blog JSON-LD
+  const blogJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Blog',
+    'name': 'Field Service Playbook Blog',
+    'description': 'Expert tips and strategies for field service contractors',
+    'url': 'https://fieldserviceplaybook.com/blog',
+    'publisher': {
+      '@type': 'Organization',
+      'name': 'Field Service Playbook',
+      'logo': {
+        '@type': 'ImageObject',
+        'url': 'https://fieldserviceplaybook.com/field-service-playbook-logo.jpg'
+      }
+    }
+  };
+
   return (
     <div className="min-h-screen bg-gray-50">
+      {/* JSON-LD structured data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(blogJsonLd) }}
+      />
+      
       <Header />
       
       {/* Banner Image */}
