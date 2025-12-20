@@ -169,7 +169,7 @@ export default function PricingCalculator() {
           <div className="mt-12 bg-gradient-to-r from-blue-600 to-blue-700 rounded-lg p-8 text-white">
             <h3 className="text-2xl font-bold mb-4">Want to Track This Revenue Automatically?</h3>
             <p className="text-blue-100 mb-6 text-lg">
-              Job Flow Hub helps you track every dollar, manage jobs, and invoice faster - so you actually hit these numbers.
+              Creative Job Hub helps you track every dollar, manage jobs, and invoice faster - so you actually hit these numbers.
             </p>
             <div className="flex gap-4">
               <a

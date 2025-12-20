@@ -104,7 +104,7 @@ export default function SoftwareComparisonPage() {
             Not sure which software is right for you?
           </h2>
           <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-            Try Job Flow Hub free for 14 days - no credit card required.
+            Try Creative Job Hub free for 14 days - no credit card required.
           </p>
           <Link
             href="/get-started"
@@ -120,7 +120,7 @@ export default function SoftwareComparisonPage() {
 
 const softwareOptions = [
   {
-    name: "Job Flow Hub",
+    name: "Creative Job Hub",
     description: "Modern, intuitive field service management built for small to medium businesses.",
     price: "$49",
     priceUnit: "per user/month",

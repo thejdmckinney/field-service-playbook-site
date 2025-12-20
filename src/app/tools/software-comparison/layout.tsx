@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "Field Service Management Software Comparison | Job Flow Hub vs Competitors",
-  description: "Compare Job Flow Hub with Jobber, Housecall Pro, ServiceTitan, and other FSM software. Features, pricing, and honest reviews from contractors.",
+  title: "Field Service Management Software Comparison | Creative Job Hub vs Competitors",
+  description: "Compare Creative Job Hub with Jobber, Housecall Pro, ServiceTitan, and other FSM software. Features, pricing, and honest reviews from contractors.",
   openGraph: {
     title: "Field Service Management Software Comparison",
     description: "Compare the best field service management software for contractors",

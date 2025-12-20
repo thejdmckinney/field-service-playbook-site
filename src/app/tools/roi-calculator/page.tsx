@@ -23,7 +23,7 @@ export default function ROICalculator() {
   
   const monthlyROI = timeSavingsValue + recoveredRevenue;
   const yearlyROI = monthlyROI * 12;
-  const softwareCost = 49; // Job Flow Hub monthly cost
+  const softwareCost = 49; // Creative Job Hub monthly cost
   const netMonthlyGain = monthlyROI - softwareCost;
   const netYearlyGain = netMonthlyGain * 12;
   const roiPercentage = ((netMonthlyGain / softwareCost) * 100).toFixed(0);
@@ -201,7 +201,7 @@ export default function ROICalculator() {
                 Ready to Start Saving ${netMonthlyGain.toLocaleString('en-US', { minimumFractionDigits: 0, maximumFractionDigits: 0 })}/month?
               </h3>
               <p className="text-blue-100 mb-6 text-lg">
-                Job Flow Hub is built for contractors like you. No bloated features, no confusing interfaces - just tools that save you time and make you money.
+                Creative Job Hub is built for contractors like you. No bloated features, no confusing interfaces - just tools that save you time and make you money.
               </p>
               <div className="flex flex-wrap gap-4">
                 <a
