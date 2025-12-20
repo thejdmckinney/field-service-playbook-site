@@ -117,7 +117,7 @@ const topics = [
     title: "Increase Revenue",
     description: "Proven strategies to boost your income and profitability.",
     icon: "💰",
-    href: "/blog/revenue",
+    href: "/blog",
   },
   {
     title: "Best Software",
@@ -129,25 +129,25 @@ const topics = [
     title: "Marketing Tips",
     description: "Get more customers with effective marketing strategies.",
     icon: "📈",
-    href: "/blog/marketing",
+    href: "/blog",
   },
   {
     title: "Efficiency Hacks",
     description: "Work smarter, not harder with time-saving techniques.",
     icon: "⚡",
-    href: "/blog/efficiency",
+    href: "/blog",
   },
   {
     title: "Customer Service",
     description: "Build loyalty and get more referrals from happy customers.",
     icon: "⭐",
-    href: "/blog/customer-service",
+    href: "/blog",
   },
   {
     title: "Business Growth",
     description: "Scale your operations and build a thriving company.",
     icon: "🚀",
-    href: "/blog/growth",
+    href: "/blog",
   },
 ];
 
