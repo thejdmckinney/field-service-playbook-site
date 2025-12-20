@@ -1,36 +1,106 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Field Service Playbook
 
-## Getting Started
+A content marketing website for [fieldserviceplaybook.com](https://fieldserviceplaybook.com) - providing valuable insights, strategies, and tools for field service businesses including handymen, electricians, plumbers, pool services, landscapers, and more.
 
-First, run the development server:
+## 🎯 Purpose
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+This website serves as a top-of-funnel lead generation tool that:
+- Provides high-value content for field service business owners
+- Drives organic traffic through SEO-optimized articles
+- Naturally introduces visitors to Job Flow Hub (field service management SaaS)
+- Builds authority and trust in the field service industry
+
+## 🚀 Tech Stack
+
+- **Next.js 16** - React framework with App Router
+- **TypeScript** - Type-safe development
+- **Tailwind CSS** - Utility-first styling
+- **Turbopack** - Fast development builds
+
+## 📁 Project Structure
+
+```
+src/
+├── app/
+│   ├── page.tsx                    # Homepage
+│   ├── blog/
+│   │   └── page.tsx                # Blog listing
+│   ├── tools/
+│   │   ├── page.tsx                # Tools directory
+│   │   └── software-comparison/
+│   │       └── page.tsx            # FSM software comparison
+│   └── layout.tsx
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🛠️ Getting Started
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Prerequisites
+- Node.js 18+ and npm
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Installation
 
-## Learn More
+```bash
+# Install dependencies
+npm install
 
-To learn more about Next.js, take a look at the following resources:
+# Run development server
+npm run dev
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# Build for production
+npm run build
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+# Start production server
+npm start
+```
 
-## Deploy on Vercel
+Open [http://localhost:3000](http://localhost:3000) to view the site.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📝 Content Strategy
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Current Pages
+- **Homepage** - Value proposition and navigation to key content areas
+- **Blog** - Articles on revenue growth, software comparisons, marketing tips, efficiency, customer service, and business growth
+- **Tools** - Free calculators, templates, and comparison tools
+- **Software Comparison** - Detailed FSM software comparison featuring Job Flow Hub
+
+### Content Topics
+1. **Revenue Growth** - Pricing strategies, upselling, service packages
+2. **Software & Tools** - FSM platform comparisons and recommendations
+3. **Marketing** - Local SEO, advertising, referral programs
+4. **Efficiency** - Time management, route optimization, automation
+5. **Customer Service** - Reviews, retention, communication
+6. **Business Growth** - Scaling, hiring, operations
+
+## 🔗 Integration with Job Flow Hub
+
+The site naturally funnels visitors to Job Flow Hub by:
+- Featuring it prominently in software comparisons
+- Including CTAs on relevant content pages
+- Providing "Try Free" CTAs throughout the site
+- Demonstrating thought leadership that builds trust
+
+## 📈 Next Steps
+
+1. **Content Creation** - Write actual blog posts for each topic
+2. **SEO Optimization** - Add meta tags, structured data, sitemap
+3. **Analytics** - Integrate Google Analytics or similar
+4. **CMS Integration** - Consider headless CMS for easier content management
+5. **Email Capture** - Add newsletter signup forms
+6. **Job Flow Hub Integration** - Connect to actual Job Flow Hub URLs
+
+## 🚢 Deployment
+
+This Next.js app can be deployed to:
+- **Vercel** (recommended) - Zero config deployment
+- **Netlify** - Great for static exports
+- **AWS Amplify** - If using AWS ecosystem
+- Any Node.js hosting provider
+
+```bash
+# Deploy to Vercel
+npx vercel
+```
+
+## 📄 License
+
+This project is for fieldserviceplaybook.com business use.
