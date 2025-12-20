@@ -1,4 +1,5 @@
 import { MDXRemote } from 'next-mdx-remote/rsc';
+import { PortableText } from '@portabletext/react';
 import { getPostBySlug, getAllPosts } from '@/lib/blog';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -43,7 +44,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
 export default async function BlogPost({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const { frontmatter, mdxSource } = await getPostBySlug(slug);
+  const { frontmatter, mdxSource, portableTextContent, isSanity } = await getPostBySlug(slug);
 
   // JSON-LD structured data for SEO
   const jsonLd = {
@@ -117,7 +118,39 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
 
         {/* Article Content */}
         <div className="prose prose-lg max-w-none bg-white rounded-lg shadow-sm p-8">
-          <MDXRemote source={mdxSource} />
+          {isSanity && portableTextContent ? (
+            <PortableText 
+              value={portableTextContent}
+              components={{
+                types: {
+                  image: ({value}) => (
+                    <Image 
+                      src={value.asset.url}
+                      alt={value.alt || ''}
+                      width={800}
+                      height={400}
+                      className="rounded-lg my-8"
+                    />
+                  ),
+                },
+                block: {
+                  h2: ({children}) => <h2 className="text-3xl font-bold mt-8 mb-4">{children}</h2>,
+                  h3: ({children}) => <h3 className="text-2xl font-bold mt-6 mb-3">{children}</h3>,
+                  normal: ({children}) => <p className="mb-4 leading-relaxed">{children}</p>,
+                  blockquote: ({children}) => <blockquote className="border-l-4 border-blue-500 pl-4 italic my-6">{children}</blockquote>,
+                },
+                marks: {
+                  link: ({children, value}) => (
+                    <a href={value.href} className="text-blue-600 hover:text-blue-700 underline" target="_blank" rel="noopener noreferrer">
+                      {children}
+                    </a>
+                  ),
+                },
+              }}
+            />
+          ) : (
+            mdxSource && <MDXRemote source={mdxSource} />
+          )}
         </div>
 
         {/* Newsletter Signup */}

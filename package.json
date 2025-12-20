@@ -9,14 +9,20 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@portabletext/react": "^6.0.0",
+    "@sanity/client": "^7.13.2",
+    "@sanity/image-url": "^2.0.2",
+    "@sanity/vision": "^5.0.1",
     "@supabase/supabase-js": "^2.89.0",
     "@vercel/analytics": "^1.6.1",
     "gray-matter": "^4.0.3",
     "next": "16.1.0",
     "next-mdx-remote": "^5.0.0",
+    "next-sanity": "^12.0.5",
     "react": "19.2.3",
     "react-dom": "19.2.3",
-    "reading-time": "^1.5.0"
+    "reading-time": "^1.5.0",
+    "sanity": "^5.0.1"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
