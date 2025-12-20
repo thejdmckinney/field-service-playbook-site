@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from 'next';
+import Header from '@/components/Header';
 
 export const metadata: Metadata = {
   title: "Free Field Service Business Tools & Calculators",
@@ -17,6 +18,8 @@ export const metadata: Metadata = {
 export default function ToolsPage() {
   return (
     <div className="min-h-screen bg-gray-50">
+      <Header />
+      
       <div className="px-4 py-16 mx-auto max-w-7xl sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">

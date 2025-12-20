@@ -1,7 +1,7 @@
 import Link from 'next/link';
-import Image from 'next/image';
 import { getAllPosts, type BlogPost } from '@/lib/blog';
 import type { Metadata } from 'next';
+import Header from '@/components/Header';
 
 export const metadata: Metadata = {
   title: "Field Service Business Blog - Expert Tips & Strategies",
@@ -22,23 +22,14 @@ export default async function BlogPage() {
 
   return (
     <div className="min-h-screen bg-gray-50">
+      <Header />
+      
       {/* Header */}
       <div className="bg-blue-600 text-white py-16">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="flex items-center gap-4 mb-4">
-            <Link href="/">
-              <Image 
-                src="/field-service-playbook-logo.jpg" 
-                alt="Field Service Playbook Logo"
-                width={100}
-                height={100}
-                className="rounded-lg"
-              />
-            </Link>
-            <h1 className="text-4xl md:text-5xl font-bold">
-              Field Service Playbook
-            </h1>
-          </div>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">
+            Field Service Blog
+          </h1>
           <p className="text-xl text-blue-100">
             Real strategies from real contractors. No BS.
           </p>

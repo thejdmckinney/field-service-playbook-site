@@ -3,6 +3,7 @@ import { getPostBySlug, getAllPosts } from '@/lib/blog';
 import Link from 'next/link';
 import Image from 'next/image';
 import NewsletterForm from '@/components/NewsletterForm';
+import Header from '@/components/Header';
 import type { Metadata } from 'next';
 
 export async function generateStaticParams() {
@@ -74,6 +75,8 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
 
   return (
     <div className="min-h-screen bg-gray-50">
+      <Header />
+      
       {/* JSON-LD Schema */}
       <script
         type="application/ld+json"
@@ -82,23 +85,12 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
       
       {/* Article Header */}
       <article className="max-w-4xl mx-auto px-4 py-12">
-        <div className="flex items-center gap-4 mb-8">
-          <Link href="/">
-            <Image 
-              src="/field-service-playbook-logo.jpg" 
-              alt="Field Service Playbook"
-              width={80}
-              height={80}
-              className="rounded-lg"
-            />
-          </Link>
-          <Link 
-            href="/blog"
-            className="text-blue-600 hover:text-blue-700"
-          >
-            ← Back to articles
-          </Link>
-        </div>
+        <Link 
+          href="/blog"
+          className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 mb-8"
+        >
+          ← Back to articles
+        </Link>
         
         <header className="mb-8">
           <div className="flex items-center gap-3 mb-4">
