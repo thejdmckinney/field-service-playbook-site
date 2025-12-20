@@ -6,6 +6,7 @@ import Image from 'next/image';
 import NewsletterForm from '@/components/NewsletterForm';
 import Header from '@/components/Header';
 import type { Metadata } from 'next';
+import remarkGfm from 'remark-gfm';
 
 export async function generateStaticParams() {
   const posts = await getAllPosts();
@@ -183,7 +184,16 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
             />
           ) : (
             <div className="prose prose-lg prose-gray max-w-none">
-              {mdxSource && <MDXRemote source={mdxSource} />}
+              {mdxSource && (
+                <MDXRemote 
+                  source={mdxSource}
+                  options={{
+                    mdxOptions: {
+                      remarkPlugins: [remarkGfm],
+                    },
+                  }}
+                />
+              )}
             </div>
           )}
         </div>
