@@ -85,7 +85,7 @@ const tools = [
   {
     title: "ROI Calculator",
     description: "See how much money field service software could save your business every month.",
-    icon: "�",
+    icon: "📈",
     slug: "roi-calculator",
     cta: "Calculate ROI",
     badge: "New",
@@ -93,7 +93,7 @@ const tools = [
   {
     title: "Software Comparison Tool",
     description: "Compare features, pricing, and reviews of top field service management platforms.",
-    icon: "�",
+    icon: "⚙️",
     slug: "software-comparison",
     cta: "Compare Now",
     badge: null,
