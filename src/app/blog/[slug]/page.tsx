@@ -183,7 +183,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
             />
           ) : (
             <div className="prose prose-lg prose-gray max-w-none">
-              {mdxSource && <MDXRemote {...mdxSource} />}
+              {mdxSource && <MDXRemote source={mdxSource} />}
             </div>
           )}
         </div>

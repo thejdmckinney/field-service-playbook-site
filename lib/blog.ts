@@ -1,7 +1,6 @@
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
-import { serialize } from 'next-mdx-remote/serialize';
 import { client } from '@/sanity/lib/client';
 import { PortableTextBlock } from 'sanity';
 
@@ -148,12 +147,10 @@ export async function getPostBySlug(slug: string) {
   const fileContents = fs.readFileSync(fullPath, 'utf8');
   const { data, content } = matter(fileContents);
 
-  const mdxSource = await serialize(content);
-
   return {
     slug,
     frontmatter: data,
-    mdxSource,
+    mdxSource: content, // Return raw MDX content for next-mdx-remote/rsc
     portableTextContent: null,
     isSanity: false,
   };
