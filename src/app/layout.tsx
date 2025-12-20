@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     description: "Free resources, tools, and expert advice to grow your field service business. Marketing tips, efficiency hacks, and software guides for contractors.",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/field-service-playbook-logo.jpg",
         width: 1200,
         height: 630,
         alt: "Field Service Playbook"
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Field Service Playbook | Grow Your Field Service Business",
     description: "Free resources, tools, and expert advice to grow your field service business.",
-    images: ["/og-image.jpg"],
+    images: ["/field-service-playbook-logo.jpg"],
     creator: "@fieldserviceplaybook"
   },
   robots: {
@@ -74,7 +74,7 @@ export default function RootLayout({
     '@type': 'Organization',
     name: 'Field Service Playbook',
     url: 'https://fieldserviceplaybook.com',
-    logo: 'https://fieldserviceplaybook.com/logo.png',
+    logo: 'https://fieldserviceplaybook.com/field-service-playbook-logo.jpg',
     description: 'Free resources, tools, and expert advice to grow your field service business',
     sameAs: [
       'https://twitter.com/fieldserviceplaybook',

@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { getAllPosts, type BlogPost } from '@/lib/blog';
 import type { Metadata } from 'next';
 
@@ -24,9 +25,20 @@ export default async function BlogPage() {
       {/* Header */}
       <div className="bg-blue-600 text-white py-16">
         <div className="max-w-7xl mx-auto px-4">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            Field Service Playbook
-          </h1>
+          <div className="flex items-center gap-4 mb-4">
+            <Link href="/">
+              <Image 
+                src="/field-service-playbook-logo.jpg" 
+                alt="Field Service Playbook Logo"
+                width={60}
+                height={60}
+                className="rounded-lg"
+              />
+            </Link>
+            <h1 className="text-4xl md:text-5xl font-bold">
+              Field Service Playbook
+            </h1>
+          </div>
           <p className="text-xl text-blue-100">
             Real strategies from real contractors. No BS.
           </p>

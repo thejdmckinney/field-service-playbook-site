@@ -1,9 +1,37 @@
 import Link from "next/link";
+import Image from "next/image";
 import NewsletterForm from "@/components/NewsletterForm";
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
+      {/* Header/Navigation */}
+      <header className="px-4 py-6 mx-auto max-w-7xl sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between">
+          <Link href="/" className="flex items-center gap-3">
+            <Image 
+              src="/field-service-playbook-logo.jpg" 
+              alt="Field Service Playbook Logo"
+              width={50}
+              height={50}
+              className="rounded-lg"
+            />
+            <span className="text-xl font-bold text-gray-900">Field Service Playbook</span>
+          </Link>
+          <nav className="hidden md:flex items-center gap-6">
+            <Link href="/blog" className="text-gray-600 hover:text-blue-600 transition">Blog</Link>
+            <Link href="/tools" className="text-gray-600 hover:text-blue-600 transition">Tools</Link>
+            <Link 
+              href="https://creativejobhub.com" 
+              className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
+              target="_blank"
+            >
+              Try Job Flow Hub
+            </Link>
+          </nav>
+        </div>
+      </header>
+
       {/* Hero Section */}
       <section className="px-4 py-20 mx-auto max-w-7xl sm:px-6 lg:px-8">
         <div className="text-center">
