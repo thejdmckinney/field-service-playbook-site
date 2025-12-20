@@ -70,6 +70,7 @@ export async function getMDXPosts(): Promise<BlogPost[]> {
         author: data.author,
         readTime: data.readTime,
         featured: data.featured || false,
+        featuredImage: data.featuredImage,
         content,
       } as BlogPost;
     });
@@ -101,7 +102,15 @@ export async function getPostBySlug(slug: string) {
     readTime,
     featured,
     "featuredImage": featuredImage.asset->url,
-    "portableTextContent": content
+    content[] {
+      ...,
+      _type == "image" => {
+        ...,
+        "asset": {
+          "url": asset->url
+        }
+      }
+    }
   }`;
 
   try {
@@ -121,7 +130,7 @@ export async function getPostBySlug(slug: string) {
           featuredImage: sanityPost.featuredImage,
         },
         mdxSource: null,
-        portableTextContent: sanityPost.portableTextContent,
+        portableTextContent: sanityPost.content,
         isSanity: true,
       };
     }

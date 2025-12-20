@@ -78,6 +78,18 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
     <div className="min-h-screen bg-gray-50">
       <Header />
       
+      {/* Banner Image */}
+      <div className="relative w-full bg-gray-100">
+        <Image 
+          src="/field-service-blog-banner.jpg"
+          alt="Field Service Playbook"
+          width={1920}
+          height={400}
+          className="w-full h-auto"
+          priority
+        />
+      </div>
+      
       {/* JSON-LD Schema */}
       <script
         type="application/ld+json"
@@ -117,31 +129,52 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
         </header>
 
         {/* Article Content */}
-        <div className="prose prose-lg max-w-none bg-white rounded-lg shadow-sm p-8">
+        <div className="bg-white rounded-lg shadow-sm p-8">
           {isSanity && portableTextContent ? (
             <PortableText 
               value={portableTextContent}
               components={{
                 types: {
-                  image: ({value}) => (
-                    <Image 
-                      src={value.asset.url}
-                      alt={value.alt || ''}
-                      width={800}
-                      height={400}
-                      className="rounded-lg my-8"
-                    />
-                  ),
+                  image: ({value}) => {
+                    // Get the image URL from Sanity
+                    const imageUrl = value.asset?.url;
+                    
+                    if (!imageUrl) {
+                      console.log('Image value:', value);
+                      return null;
+                    }
+                    
+                    return (
+                      <div className="my-8">
+                        <img 
+                          src={imageUrl}
+                          alt={value.alt || 'Blog image'}
+                          className="rounded-lg w-full"
+                        />
+                      </div>
+                    );
+                  },
                 },
                 block: {
-                  h2: ({children}) => <h2 className="text-3xl font-bold mt-8 mb-4">{children}</h2>,
-                  h3: ({children}) => <h3 className="text-2xl font-bold mt-6 mb-3">{children}</h3>,
-                  normal: ({children}) => <p className="mb-4 leading-relaxed">{children}</p>,
-                  blockquote: ({children}) => <blockquote className="border-l-4 border-blue-500 pl-4 italic my-6">{children}</blockquote>,
+                  h2: ({children}) => <h2 className="text-3xl font-bold mt-8 mb-4 text-gray-900">{children}</h2>,
+                  h3: ({children}) => <h3 className="text-2xl font-bold mt-6 mb-3 text-gray-900">{children}</h3>,
+                  normal: ({children}) => <p className="mb-4 leading-relaxed text-gray-800 text-lg">{children}</p>,
+                  blockquote: ({children}) => <blockquote className="border-l-4 border-blue-500 pl-4 italic my-6 text-gray-700">{children}</blockquote>,
+                },
+                list: {
+                  bullet: ({children}) => <ul className="list-disc pl-6 mb-4 space-y-2">{children}</ul>,
+                  number: ({children}) => <ol className="list-decimal pl-6 mb-4 space-y-2">{children}</ol>,
+                },
+                listItem: {
+                  bullet: ({children}) => <li className="text-gray-800 text-lg leading-relaxed">{children}</li>,
+                  number: ({children}) => <li className="text-gray-800 text-lg leading-relaxed">{children}</li>,
                 },
                 marks: {
+                  strong: ({children}) => <strong className="font-bold text-gray-900">{children}</strong>,
+                  em: ({children}) => <em className="italic text-gray-800">{children}</em>,
+                  code: ({children}) => <code className="bg-gray-100 text-gray-900 px-2 py-1 rounded font-mono text-sm">{children}</code>,
                   link: ({children, value}) => (
-                    <a href={value.href} className="text-blue-600 hover:text-blue-700 underline" target="_blank" rel="noopener noreferrer">
+                    <a href={value.href} className="text-blue-600 hover:text-blue-700 underline font-medium" target="_blank" rel="noopener noreferrer">
                       {children}
                     </a>
                   ),

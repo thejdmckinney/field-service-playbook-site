@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { getAllPosts } from '@/lib/blog';
 import type { Metadata } from 'next';
 import Header from '@/components/Header';
@@ -103,22 +104,34 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
     <div className="min-h-screen bg-gray-50">
       <Header />
       
+      {/* Banner Image */}
+      <div className="relative w-full bg-gray-100">
+        <Image 
+          src="/field-service-blog-banner.jpg"
+          alt="Field Service Playbook"
+          width={1920}
+          height={400}
+          className="w-full h-auto"
+          priority
+        />
+      </div>
+      
       {/* Category Header */}
-      <div className="bg-blue-600 text-white py-16">
+      <div className="bg-gradient-to-b from-white to-gray-50 py-12">
         <div className="max-w-7xl mx-auto px-4">
           <Link 
             href="/blog"
-            className="inline-flex items-center gap-2 text-blue-100 hover:text-white mb-6 transition"
+            className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 mb-6 transition"
           >
             ← All Articles
           </Link>
           <div className="flex items-center gap-4 mb-4">
             <span className="text-5xl">{categoryInfo.icon}</span>
-            <h1 className="text-4xl md:text-5xl font-bold">
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900">
               {categoryInfo.name}
             </h1>
           </div>
-          <p className="text-xl text-blue-100">
+          <p className="text-xl text-gray-600">
             {categoryInfo.description}
           </p>
         </div>
@@ -134,17 +147,30 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
         ) : (
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
             {filteredPosts.map((post) => (
-              <article
+              <Link
                 key={post.slug}
-                className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow"
+                href={`/blog/${post.slug}`}
+                className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow group"
               >
+                {/* Featured Image */}
+                {post.featuredImage && (
+                  <div className="relative h-56 w-full overflow-hidden bg-gray-100">
+                    <Image
+                      src={post.featuredImage}
+                      alt={post.title}
+                      fill
+                      className="object-contain group-hover:scale-105 transition-transform duration-300"
+                    />
+                  </div>
+                )}
+                
                 <div className="p-6">
                   <div className="flex items-center gap-2 text-sm text-gray-600 mb-3">
                     <span className="font-medium text-blue-600">{post.category}</span>
                     <span>•</span>
                     <span>{post.readTime}</span>
                   </div>
-                  <h2 className="text-xl font-bold text-gray-900 mb-3">
+                  <h2 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
                     {post.title}
                   </h2>
                   <p className="text-gray-600 mb-4 line-clamp-3">
@@ -158,15 +184,12 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
                         year: 'numeric'
                       })}
                     </span>
-                    <Link
-                      href={`/blog/${post.slug}`}
-                      className="text-blue-600 hover:text-blue-700 font-semibold"
-                    >
+                    <span className="text-blue-600 hover:text-blue-700 font-semibold">
                       Read more →
-                    </Link>
+                    </span>
                   </div>
                 </div>
-              </article>
+              </Link>
             ))}
           </div>
         )}
