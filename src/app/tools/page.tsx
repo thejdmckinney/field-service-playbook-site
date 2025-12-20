@@ -104,7 +104,7 @@ const tools = [
     icon: "⏱️",
     slug: "time-tracking",
     cta: "Download Template",
-    badge: "Coming Soon",
+    badge: "New",
   },
   {
     title: "Quote Template Generator",
@@ -112,7 +112,7 @@ const tools = [
     icon: "📄",
     slug: "quote-template",
     cta: "Generate Quote",
-    badge: "Coming Soon",
+    badge: "New",
   },
   {
     title: "Service Area Mapper",

@@ -4,6 +4,14 @@ export default function SoftwareComparisonPage() {
   return (
     <div className="min-h-screen bg-white">
       <div className="px-4 py-16 mx-auto max-w-7xl sm:px-6 lg:px-8">
+        {/* Back Button */}
+        <Link 
+          href="/tools"
+          className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 mb-8 font-medium"
+        >
+          ← Back to Tools
+        </Link>
+        
         {/* Header */}
         <div className="text-center mb-16">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">
