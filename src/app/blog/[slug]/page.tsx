@@ -87,8 +87,8 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
             <Image 
               src="/field-service-playbook-logo.jpg" 
               alt="Field Service Playbook"
-              width={40}
-              height={40}
+              width={80}
+              height={80}
               className="rounded-lg"
             />
           </Link>

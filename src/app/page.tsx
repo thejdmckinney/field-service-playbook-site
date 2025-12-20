@@ -12,21 +12,22 @@ export default function Home() {
             <Image 
               src="/field-service-playbook-logo.jpg" 
               alt="Field Service Playbook Logo"
-              width={50}
-              height={50}
+              width={120}
+              height={120}
               className="rounded-lg"
             />
-            <span className="text-xl font-bold text-gray-900">Field Service Playbook</span>
+            <span className="text-2xl font-bold text-gray-900">Field Service Playbook</span>
           </Link>
           <nav className="hidden md:flex items-center gap-6">
             <Link href="/blog" className="text-gray-600 hover:text-blue-600 transition">Blog</Link>
             <Link href="/tools" className="text-gray-600 hover:text-blue-600 transition">Tools</Link>
             <Link 
               href="https://creativejobhub.com" 
-              className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
+              className="flex flex-col items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
               target="_blank"
             >
-              Try Job Flow Hub
+              <span className="font-semibold">Try Creative Job Hub</span>
+              <span className="text-xs text-blue-100">Built by a contractor, for contractors</span>
             </Link>
           </nav>
         </div>

@@ -30,8 +30,8 @@ export default async function BlogPage() {
               <Image 
                 src="/field-service-playbook-logo.jpg" 
                 alt="Field Service Playbook Logo"
-                width={60}
-                height={60}
+                width={100}
+                height={100}
                 className="rounded-lg"
               />
             </Link>
