@@ -146,37 +146,37 @@ const topics = [
     title: "Increase Revenue",
     description: "Proven strategies to boost your income and profitability.",
     icon: "💰",
-    href: "/blog/revenue",
+    href: "/blog/category/revenue",
   },
   {
     title: "Best Software",
     description: "Compare top field service management tools for your business.",
     icon: "🛠️",
-    href: "/blog/software",
+    href: "/blog/category/software",
   },
   {
     title: "Marketing Tips",
     description: "Get more customers with effective marketing strategies.",
     icon: "📈",
-    href: "/blog/marketing",
+    href: "/blog/category/marketing",
   },
   {
     title: "Efficiency Hacks",
     description: "Work smarter, not harder with time-saving techniques.",
     icon: "⚡",
-    href: "/blog/efficiency",
+    href: "/blog/category/efficiency",
   },
   {
     title: "Customer Service",
     description: "Build loyalty and get more referrals from happy customers.",
     icon: "⭐",
-    href: "/blog/customer-service",
+    href: "/blog/category/customer-service",
   },
   {
     title: "Business Growth",
     description: "Scale your operations and build a thriving company.",
     icon: "🚀",
-    href: "/blog/growth",
+    href: "/blog/category/growth",
   },
 ];
 

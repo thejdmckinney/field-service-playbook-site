@@ -59,11 +59,11 @@ export async function generateMetadata({ params }: { params: Promise<{ category:
     openGraph: {
       title: `${categoryInfo.name} Articles - Field Service Playbook`,
       description: categoryInfo.description,
-      url: `https://fieldserviceplaybook.com/blog/${category}`,
+      url: `https://fieldserviceplaybook.com/blog/category/${category}`,
       type: 'website',
     },
     alternates: {
-      canonical: `https://fieldserviceplaybook.com/blog/${category}`,
+      canonical: `https://fieldserviceplaybook.com/blog/category/${category}`,
     }
   };
 }
