@@ -7,7 +7,7 @@ export default function Header() {
       <div className="flex items-center justify-between">
         <Link href="/" className="flex items-center gap-3 hover:opacity-80 transition">
           <Image 
-            src="/field-service-playbook-logo.jpg" 
+            src="/fsp-logo-circle.jpg" 
             alt="Field Service Playbook Logo"
             width={80}
             height={80}
