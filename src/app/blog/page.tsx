@@ -45,7 +45,7 @@ export default async function BlogPage() {
       'name': 'Field Service Playbook',
       'logo': {
         '@type': 'ImageObject',
-        'url': 'https://fieldserviceplaybook.com/field-service-playbook-logo.jpg'
+        'url': 'https://fieldserviceplaybook.com/png-logo-circle.png'
       }
     }
   };

@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/field-service-playbook-logo.jpg",
+        url: "/png-logo-circle.png",
         width: 1200,
         height: 630,
         alt: "Field Service Playbook - Contractor Business Resources"
@@ -51,7 +51,7 @@ export default function Home() {
       "name": "Field Service Playbook",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://fieldserviceplaybook.com/field-service-playbook-logo.jpg"
+        "url": "https://fieldserviceplaybook.com/png-logo-circle.png"
       }
     },
     "potentialAction": {
@@ -66,7 +66,7 @@ export default function Home() {
     "@type": "Organization",
     "name": "Field Service Playbook",
     "url": "https://fieldserviceplaybook.com",
-    "logo": "https://fieldserviceplaybook.com/field-service-playbook-logo.jpg",
+    "logo": "https://fieldserviceplaybook.com/png-logo-circle.png",
     "sameAs": [
       "https://creativejobhub.com"
     ],
@@ -91,10 +91,10 @@ export default function Home() {
         <div className="flex items-center justify-between">
           <Link href="/" className="flex items-center gap-3">
             <Image 
-              src="/field-service-playbook-logo.jpg" 
+              src="/png-logo-circle.png" 
               alt="Field Service Playbook Logo"
-              width={120}
-              height={120}
+              width={150}
+              height={150}
               className="rounded-lg"
             />
             <span className="text-2xl font-bold text-gray-900">Field Service Playbook</span>

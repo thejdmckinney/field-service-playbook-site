@@ -7,10 +7,10 @@ export default function Header() {
       <div className="flex items-center justify-between">
         <Link href="/" className="flex items-center gap-3 hover:opacity-80 transition">
           <Image 
-            src="/fsp-logo-circle.jpg" 
+            src="/png-logo-circle.png" 
             alt="Field Service Playbook Logo"
-            width={80}
-            height={80}
+            width={100}
+            height={100}
             className="rounded-lg"
           />
           <span className="text-xl font-bold text-gray-900">Field Service Playbook</span>

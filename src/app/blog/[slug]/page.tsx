@@ -63,7 +63,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
       name: 'Field Service Playbook',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://fieldserviceplaybook.com/field-service-playbook-logo.jpg'
+        url: 'https://fieldserviceplaybook.com/png-logo-circle.png'
       }
     },
     datePublished: frontmatter.date,
