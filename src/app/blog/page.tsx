@@ -51,7 +51,7 @@ export default async function BlogPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gradient-to-br from-blue-100 via-slate-50 to-blue-50">
       {/* JSON-LD structured data */}
       <script
         type="application/ld+json"

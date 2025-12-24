@@ -85,9 +85,9 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
       />
       
-      <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
+      <div className="min-h-screen bg-gradient-to-br from-blue-100 via-slate-50 to-blue-50">
       {/* Header/Navigation */}
-      <header className="px-4 py-6 mx-auto max-w-7xl sm:px-6 lg:px-8">
+      <header className="px-4 py-6 mx-auto max-w-7xl sm:px-6 lg:px-8 bg-white/80 backdrop-blur-sm">
         <div className="flex items-center justify-between">
           <Link href="/" className="flex items-center gap-3">
             <Image 
@@ -143,7 +143,7 @@ export default function Home() {
       </section>
 
       {/* Featured Topics */}
-      <section className="px-4 py-16 mx-auto max-w-7xl sm:px-6 lg:px-8">
+      <section className="px-4 py-16 mx-auto max-w-7xl sm:px-6 lg:px-8 bg-gradient-to-br from-white/70 via-blue-50/30 to-slate-100/40 rounded-3xl">
         <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">
           Popular Topics
         </h2>
@@ -170,7 +170,7 @@ export default function Home() {
       </section>
 
       {/* Newsletter Section */}
-      <section className="px-4 py-16 mx-auto max-w-7xl sm:px-6 lg:px-8">
+      <section className="px-4 py-16 mx-auto max-w-7xl sm:px-6 lg:px-8 bg-gradient-to-r from-blue-100/60 via-slate-50/50 to-blue-50/60 rounded-3xl">
         <div className="flex flex-col md:flex-row gap-8 items-center">
           <div className="flex-1">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
@@ -203,7 +203,7 @@ export default function Home() {
 
       {/* CTA Section */}
       <section className="px-4 py-16 mx-auto max-w-7xl sm:px-6 lg:px-8">
-        <div className="bg-blue-600 rounded-2xl p-12 text-center">
+        <div className="bg-gradient-to-r from-blue-600 to-blue-700 rounded-2xl p-12 text-center shadow-2xl">
           <h2 className="text-3xl font-bold text-white mb-4">
             Ready to Scale Your Business?
           </h2>
