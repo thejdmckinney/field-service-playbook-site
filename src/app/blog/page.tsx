@@ -65,15 +65,20 @@ export default async function BlogPage() {
       <Header />
       
       {/* Banner Image */}
-      <div className="relative w-full bg-gray-100">
+      <div className="relative w-full h-64 md:h-80 lg:h-96 overflow-hidden">
         <Image 
-          src="/field-service-blog-banner.jpg"
+          src="/banner-fsp.png"
           alt="Field Service Playbook Blog"
-          width={1920}
-          height={400}
-          className="w-full h-auto"
+          fill
+          className="object-cover"
           priority
         />
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-900/70 to-blue-600/50 flex items-center justify-center">
+          <div className="text-center text-white px-4">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">Field Service Blog</h1>
+            <p className="text-xl md:text-2xl">Expert tips and strategies to grow your business</p>
+          </div>
+        </div>
       </div>
       
       {/* Blog Grid */}
